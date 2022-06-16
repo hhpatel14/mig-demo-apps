@@ -253,14 +253,14 @@ func main() {
 	tododb := db.Database("todolist").Collection("TodoItemModel")
 
 	// check to see if the db is prepopulated
-	filter := bson.D{{"description", "time"}}
-	var result TodoItemModel
-	err = tododb.FindOne(context.TODO(), filter).Decode(&result)
-	if err != nil {
-		prepopulate(tododb)
-	} else {
-		fmt.Printf("%+v\n", result)
-	}
+// 	filter := bson.D{{"description", "time"}}
+// 	var result TodoItemModel
+// 	err = tododb.FindOne(context.TODO(), filter).Decode(&result)
+// 	if err != nil {
+// 		prepopulate(tododb)
+// 	} else {
+// 		fmt.Printf("%+v\n", result)
+// 	}
 
 	fs := http.FileServer(http.Dir("./resources/"))
 
